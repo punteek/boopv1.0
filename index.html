@@ -68,6 +68,10 @@
 <!-- im a god -->
 <div id="draw-shapes"></div>
 
+<!-- svg that i want to show-->
+
+<object type="image/svg+xml" data="myTree.svg" id="tree"></object>
+
 <!--
 <script>
 			var scene = new THREE.Scene();
@@ -98,11 +102,13 @@
 -->
 
 <script>
-	// Make an instance of two and place it on the page.
+
+// Make an instance of two and place it on the page.
 var elem = document.getElementById('draw-shapes');
 var params = { width: 285, height: 200 };
 var two = new Two(params).appendTo(elem);
 
+/*
 // two has convenience methods to create shapes.
 var circle = two.makeCircle(72, 100, 50);
 //var rect = two.makeRectangle(213, 100, 100, 100);
@@ -114,6 +120,8 @@ var line = two.makeLine(213, 100, 220, 100);
 circle.fill = '#FF8000';
 circle.stroke = 'orangered'; // Accepts all valid css color
 circle.linewidth = 5;
+*/
+
 /*
 rect.fill = 'rgb(0, 200, 255)';
 rect.opacity = 0.75;
@@ -121,6 +129,11 @@ rect.noStroke();
 */
 // Don't forget to tell two to render everything
 // to the screen
+
+var svgObject = document.getElementsByTagName('object')[0];
+var mySvg = svgObject.contentDocument.getElementsByTagName('svg')[0];
+var bigTree = two.interpret(mySvg);
+
 two.update();
 </script>
 </body>
