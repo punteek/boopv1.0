@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Blog Start</title>
-	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="bootstrap.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.js"></script>
@@ -65,70 +65,25 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+<!-- link to post #1 here -->
+
+
+
+
+
+
+
 <!-- im a god -->
 <div id="draw-shapes"></div>
 
 <!-- svg that i want to show-->
 
 <object type="image/svg+xml" data="myTree.svg" id="tree"></object>
-
-<!--
 <script>
-			var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-
-			var renderer = new THREE.WebGLRenderer();
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
-
-			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			var cube = new THREE.Mesh( geometry, material );
-			scene.add( cube );
-
-			camera.position.z = 5;
-
-			var animate = function () {
-				requestAnimationFrame( animate );
-
-				cube.rotation.x += 0.1;
-				cube.rotation.y += 0.1;
-
-				renderer.render(scene, camera);
-			};
-
-			animate();
-</script>
--->
-
-<script>
-
 // Make an instance of two and place it on the page.
 var elem = document.getElementById('draw-shapes');
 var params = { width: 285, height: 200 };
 var two = new Two(params).appendTo(elem);
-
-/*
-// two has convenience methods to create shapes.
-var circle = two.makeCircle(72, 100, 50);
-//var rect = two.makeRectangle(213, 100, 100, 100);
-
-// testing library
-var line = two.makeLine(213, 100, 220, 100);
-
-// The object returned has many stylable properties:
-circle.fill = '#FF8000';
-circle.stroke = 'orangered'; // Accepts all valid css color
-circle.linewidth = 5;
-*/
-
-/*
-rect.fill = 'rgb(0, 200, 255)';
-rect.opacity = 0.75;
-rect.noStroke();
-*/
-// Don't forget to tell two to render everything
-// to the screen
 
 var svgObject = document.getElementsByTagName('object')[0];
 var mySvg = svgObject.contentDocument.getElementsByTagName('svg')[0];
