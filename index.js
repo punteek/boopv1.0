@@ -4,13 +4,28 @@ var path = require('path');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// home page
-app.get('/', (req, res) => {
-	res.send("Hello World!");
-});
+app.listen(3000, () => console.log('Example app listening on port 3000!'));
 
-app.get('/index', function(req, res) {
+// -------------------------------------------------------------------------
+
+
+// home page endpoint
+app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+// post endpoint
+app.get('/post.html', function(req, res) {
+    res.sendFile(path.join(__dirname + '/post.html'));
+});
+
+// if "something" is clicked
+// redirect to /index
+/*
+app.post('/index', function(req, res){
+	if(clicked == true)
+	{
+		res.redirect('/index');
+	}
+});
+*/
