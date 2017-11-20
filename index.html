@@ -14,7 +14,7 @@
 
 
 	<!-- Navbar at the top -->
-	<nav class="navbar">
+	<nav class="navbar-fixed-top" data-offset="50">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -75,8 +75,8 @@ var elem = document.getElementById('draw-shapes');
 var params = { width: 285, height: 200 };
 var two = new Two(params).appendTo(elem);
 
-var svgObject = document.getElementsByTagName('object')[0];
-var mySvg = svgObject.contentDocument.getElementsByTagName('svg')[0];
+var svgObject = document.getElementsByTagName("object")[0];
+var mySvg = svgObject.contentDocument.getElementsByTagName("svg")[0];
 var bigTree = two.interpret(mySvg);
 
 two.update();
